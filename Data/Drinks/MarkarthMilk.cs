@@ -3,11 +3,17 @@ using System.Collections.Generic;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
-namespace BleakwindBuffet.Data.Sides
+namespace BleakwindBuffet.Data.Drinks
 {
-    class DragonbornWaffleFries
+    class MarkarthMilk
     {
+        private bool ice = false;
         private Size size = Size.Small;
+        public bool Ice
+        {
+            get { return ice; }
+            set { ice = value; }
+        }
         public Size Size
         {
             get { return size; }
@@ -19,15 +25,15 @@ namespace BleakwindBuffet.Data.Sides
             {
                 if (size == Size.Small)
                 {
-                    return .42;
+                    return 1.05;
                 }
                 else if (size == Size.Medium)
                 {
-                    return .76;
+                    return 1.11;
                 }
                 else
                 {
-                    return .96;
+                    return 1.22;
                 }
             }
         }
@@ -37,15 +43,15 @@ namespace BleakwindBuffet.Data.Sides
             {
                 if (size == Size.Small)
                 {
-                    return 77;
+                    return 56;
                 }
                 else if (size == Size.Medium)
                 {
-                    return 89;
+                    return 72;
                 }
                 else
                 {
-                    return 100;
+                    return 93;
                 }
             }
         }
@@ -54,12 +60,16 @@ namespace BleakwindBuffet.Data.Sides
             get
             {
                 List<string> instructions = new List<string>();
+                if (Ice) instructions.Add("Add Ice, ");
+
                 return instructions;
             }
         }
         public override string ToString()
         {
-            return size+ " Dragonborn Waffle Fries";
+            
+            return size + " Markarth Milk";
+            
         }
     }
 }
