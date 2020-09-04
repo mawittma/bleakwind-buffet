@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
-    class SmokehouseSkeleton
+    public class SmokehouseSkeleton
     {
         private bool sausageLink = true;
         private bool egg = true;

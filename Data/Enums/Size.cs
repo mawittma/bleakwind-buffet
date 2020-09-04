@@ -1,7 +1,7 @@
 ﻿/*
  * Author: Zachery Brunner
- * Class name: Size.cs
- * Purpose: Class used to represent sizes through an enumeration
+ * public class name: Size.cs
+ * Purpose: public class used to represent sizes through an enumeration
  */
 
 namespace BleakwindBuffet.Data.Enums

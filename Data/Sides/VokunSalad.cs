@@ -5,7 +5,7 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
-    class VokunSalad
+    public class VokunSalad
     {
         private Size size = Size.Small;
         public Size Size

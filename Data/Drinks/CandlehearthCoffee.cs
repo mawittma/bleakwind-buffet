@@ -5,7 +5,7 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    class CandlehearthCoffee
+    public class CandlehearthCoffee
     {
         private bool ice = false;
         private bool decaf = false;

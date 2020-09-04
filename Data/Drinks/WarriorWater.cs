@@ -5,7 +5,7 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
-    class WarriorWater
+    public class WarriorWater
     {
         private bool ice = true;
         private bool lemon = true;
