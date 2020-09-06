@@ -94,7 +94,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// </summary>
         public uint Calories
         {
-            get { return 843; }
+            get { return 743; }
         }
         /// <summary>
         /// A list of special instructions for the draugr
@@ -104,9 +104,14 @@ namespace BleakwindBuffet.Data.Entrees
             get
             {
                 List<string> instructions = new List<string>();
-                if (!Tomato) instructions.Add("Hold Tomato, ");
-                if (!Lettuce) instructions.Add("Hold Lettuce, ");
-                if (!Mayo) instructions.Add("Hold Mayo, ");
+                if (!Bun) instructions.Add("Hold bun");
+                if (!Ketchup) instructions.Add("Hold ketchup");
+                if (!Mustard) instructions.Add("Hold mustard");
+                if (!Pickle) instructions.Add("Hold pickle");
+                if (!Cheese) instructions.Add("Hold cheese");
+                if (!Tomato) instructions.Add("Hold tomato");
+                if (!Lettuce) instructions.Add("Hold lettuce");
+                if (!Mayo) instructions.Add("Hold mayo");
                 return instructions;
             }
         }

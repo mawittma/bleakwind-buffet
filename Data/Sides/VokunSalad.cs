@@ -29,7 +29,7 @@ namespace BleakwindBuffet.Data.Sides
             {
                 if (size == Size.Small)
                 {
-                    return .98;
+                    return .93;
                 }
                 else if (size == Size.Medium)
                 {

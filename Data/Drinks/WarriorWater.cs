@@ -12,7 +12,7 @@ namespace BleakwindBuffet.Data.Drinks
     {
         //private variables for warrior water
         private bool ice = true;
-        private bool lemon = true;
+        private bool lemon = false;
         private Size size = Size.Small;
         /// <summary>
         /// If warrioir water has ice in it
@@ -66,8 +66,8 @@ namespace BleakwindBuffet.Data.Drinks
             get
             {
                 List<string> instructions = new List<string>();
-                if (Ice) instructions.Add("Hold Ice, ");
-                if (Lemon) instructions.Add("Add Lemon, ");
+                if (!Ice) instructions.Add("Hold ice");
+                if (Lemon) instructions.Add("Add lemon");
                 return instructions;
             }
         }
