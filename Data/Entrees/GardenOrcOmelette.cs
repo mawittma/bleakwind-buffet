@@ -4,13 +4,19 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// A class to represent the garden orc omelette
+    /// </summary>
     public class GardenOrcOmelette
     {
+        // private variables for the garden orc omelette
         private bool broccoli = true;
         private bool mushrooms = true;
         private bool tomato = true;
         private bool cheddar = true;
-        
+        /// <summary>
+        /// If there is broccoli in the omelette
+        /// </summary>
         public bool Broccoli
         {
             get { return broccoli; }
@@ -19,6 +25,9 @@ namespace BleakwindBuffet.Data.Entrees
                 broccoli = value; 
             }
         }
+        /// <summary>
+        /// If there is mushrooms in the omelette
+        /// </summary>
         public bool Mushrooms
         {
             get { return mushrooms; }
@@ -27,25 +36,39 @@ namespace BleakwindBuffet.Data.Entrees
                 mushrooms = value; 
             }
         }
+        /// <summary>
+        /// If there is tomato in the omelette
+        /// </summary>
         public bool Tomato
         {
             get { return tomato; }
             set { tomato = value; }
         }
+        /// <summary>
+        /// If there is cheddar on the omelette
+        /// </summary>
         public bool Cheddar
         {
             get { return cheddar; }
             set { cheddar = value; }
         }
+        /// <summary>
+        /// The price of the omelette
+        /// </summary>
         public double Price
         {
             get { return 4.57; }
         }
+        /// <summary>
+        /// The calories of the omelette
+        /// </summary>
         public uint Calories
         {
             get { return 602; }
         }
-        
+        /// <summary>
+        /// A list of the special instructions for the omelette
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get 
@@ -58,6 +81,10 @@ namespace BleakwindBuffet.Data.Entrees
                 return instructions; 
             }
         }
+        /// <summary>
+        /// Returns the description of the omelette
+        /// </summary>
+        /// <returns>a string to describe the omelette</returns>
         public override string ToString()
         {
             return "Garden Orc Omelette";

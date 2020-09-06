@@ -5,26 +5,42 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// A class representing Sailor Soda
+    /// </summary>
     public class SailorSoda
     {
+        //private variables for Sailor Soda
         private bool ice = true;
         private Size size = Size.Small;
         private SodaFlavor flavor = SodaFlavor.Cherry;
+        /// <summary>
+        /// If there is ice in the Sailor Soda
+        /// </summary>
         public bool Ice
         {
             get { return ice; }
             set { ice = value; }
         }
+        /// <summary>
+        /// The size of the soda
+        /// </summary>
         public Size Size
         {
             get { return size; }
             set { size = value; }
         }
+        /// <summary>
+        /// The flavor of the sailor soda
+        /// </summary>
         public SodaFlavor Flavor
         {
             get { return flavor; }
             set { flavor = value; }
         }
+        /// <summary>
+        /// The price of the soda based on size
+        /// </summary>
         public double Price
         {
             get
@@ -43,6 +59,9 @@ namespace BleakwindBuffet.Data.Drinks
                 }
             }
         }
+        /// <summary>
+        /// The calories of the soda based on size
+        /// </summary>
         public uint Calories
         {
             get
@@ -61,6 +80,9 @@ namespace BleakwindBuffet.Data.Drinks
                 }
             }
         }
+        /// <summary>
+        /// A list of special instructions for the soda
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get
@@ -71,6 +93,10 @@ namespace BleakwindBuffet.Data.Drinks
                 return instructions;
             }
         }
+        /// <summary>
+        /// returns a description of the soda
+        /// </summary>
+        /// <returns>a string to describe the soda</returns>
         public override string ToString()
         {
 

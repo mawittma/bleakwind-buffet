@@ -4,16 +4,28 @@ using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
 {
+    /// <summary>
+    /// a class representing the thugs TBone
+    /// </summary>
     public class ThugsTBone
     {
+        /// <summary>
+        /// The price of TBone
+        /// </summary>
         public double Price
         {
             get { return 6.44; }
         }
+        /// <summary>
+        /// The calories of the TBone
+        /// </summary>
         public uint Calories
         {
             get { return 982; }
         }
+        /// <summary>
+        /// A list for special instructions for TBone
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get
@@ -22,6 +34,10 @@ namespace BleakwindBuffet.Data.Entrees
                 return instructions;
             }
         }
+        /// <summary>
+        /// Returns a description of TBone
+        /// </summary>
+        /// <returns>a string to describe TBone</returns>
         public override string ToString()
         {
             return "Thugs T-Bone";

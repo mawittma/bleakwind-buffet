@@ -5,26 +5,42 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
 {
+    /// <summary>
+    /// A class representing warrior water
+    /// </summary>
     public class WarriorWater
     {
+        //private variables for warrior water
         private bool ice = true;
         private bool lemon = true;
         private Size size = Size.Small;
+        /// <summary>
+        /// If warrioir water has ice in it
+        /// </summary>
         public bool Ice
         {
             get { return ice; }
             set { ice = value; }
         }
+        /// <summary>
+        /// The size of the water
+        /// </summary>
         public Size Size
         {
             get { return size; }
             set { size = value; }
         }
+        /// <summary>
+        /// If there is lemon in the water
+        /// </summary>
         public bool Lemon
         {
             get { return lemon; }
             set { lemon = value; }
         }
+        /// <summary>
+        /// The price of the water based on size
+        /// </summary>
         public double Price
         {
             get
@@ -32,6 +48,9 @@ namespace BleakwindBuffet.Data.Drinks
                 return 0;
             }
         }
+        /// <summary>
+        /// The calories of the water
+        /// </summary>
         public uint Calories
         {
             get
@@ -39,6 +58,9 @@ namespace BleakwindBuffet.Data.Drinks
                 return 0;
             }
         }
+        /// <summary>
+        /// A list of special instructions for the water
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get
@@ -49,6 +71,10 @@ namespace BleakwindBuffet.Data.Drinks
                 return instructions;
             }
         }
+        /// <summary>
+        /// Returns the description of the water
+        /// </summary>
+        /// <returns>a string that describes the water</returns>
         public override string ToString()
         {
             return size + " Warrior Water";

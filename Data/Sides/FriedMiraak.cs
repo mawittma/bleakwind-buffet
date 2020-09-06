@@ -5,14 +5,24 @@ using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
 {
+    /// <summary>
+    /// A class representing fried miraak
+    /// </summary>
     public class FriedMiraak
     {
+        // private variables for miraak
         private Size size = Size.Small;
+        /// <summary>
+        /// The size of the miraak
+        /// </summary>
         public Size Size
         {
             get { return size; }
             set { size = value; }
         }
+        /// <summary>
+        /// The price of the miraak based on size
+        /// </summary>
         public double Price
         {
             get
@@ -31,6 +41,9 @@ namespace BleakwindBuffet.Data.Sides
                 }
             }
         }
+        /// <summary>
+        /// The calories of miraak based on size
+        /// </summary>
         public uint Calories
         {
             get
@@ -49,6 +62,9 @@ namespace BleakwindBuffet.Data.Sides
                 }
             }
         }
+        /// <summary>
+        /// A list of special instructions for the miraak
+        /// </summary>
         public List<string> SpecialInstructions
         {
             get
@@ -57,6 +73,10 @@ namespace BleakwindBuffet.Data.Sides
                 return instructions;
             }
         }
+        /// <summary>
+        /// Returns a description of the miraak
+        /// </summary>
+        /// <returns>a string to describe the miraak</returns>
         public override string ToString()
         {
             return size + " Fried Miraak";
