@@ -7,26 +7,26 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// a class representing the thugs TBone
     /// </summary>
-    public class ThugsTBone
+    public class ThugsTBone : Entree, IOrderItem
     {
         /// <summary>
         /// The price of TBone
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 6.44; }
         }
         /// <summary>
         /// The calories of the TBone
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 982; }
         }
         /// <summary>
         /// A list for special instructions for TBone
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

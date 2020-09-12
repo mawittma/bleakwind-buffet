@@ -7,7 +7,7 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// A class representing a Philly Poacher
     /// </summary>
-    public class PhillyPoacher
+    public class PhillyPoacher :Entree, IOrderItem
     {
         // private variables for the philly poacher
         private bool sirloin = true;
@@ -40,21 +40,21 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// The price of the philly
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 7.23; }
         }
         /// <summary>
         /// The calories of the philly
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 784; }
         }
         /// <summary>
         /// A list of special instructions for the philly
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

@@ -7,7 +7,7 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// A class to represent Smokehouse Skeleton
     /// </summary>
-    public class SmokehouseSkeleton
+    public class SmokehouseSkeleton : Entree, IOrderItem
     {
         // private variables for smokehouse
         private bool sausageLink = true;
@@ -49,19 +49,19 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// The price of the smokehosue
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 5.62; }
         }
         /// <summary>
         /// The calories of the smokehouse
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 602; }
         }
         // A list of special instructions for the smokehouse
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {

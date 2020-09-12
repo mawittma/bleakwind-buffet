@@ -7,7 +7,7 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// A class to represent the Double Draugr
     /// </summary>
-    public class DoubleDraugr
+    public class DoubleDraugr : Entree, IOrderItem
     {
         // private variables for the draugr
         private bool bun = true;
@@ -85,21 +85,21 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// The price of the draugr
         /// </summary>
-        public double Price
+        public override double Price
         {
             get { return 7.32; }
         }
         /// <summary>
         /// The calories of the draugr
         /// </summary>
-        public uint Calories
+        public override uint Calories
         {
             get { return 743; }
         }
         /// <summary>
         /// A list of special instructions for the draugr
         /// </summary>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get
             {
