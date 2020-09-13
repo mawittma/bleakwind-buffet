@@ -16,7 +16,7 @@ namespace BleakwindBuffet.Data.Sides
         public abstract Size Size { get; set; }
         /// <summary>
         /// The price of the drink
-        /// </summary>
+        /// </summary>+
         /// <value>
         /// In US dollars
         /// </value>
