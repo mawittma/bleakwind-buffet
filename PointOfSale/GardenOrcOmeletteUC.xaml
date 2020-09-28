@@ -5,11 +5,17 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PointOfSale"
              mc:Ignorable="d" 
-             d:DesignHeight="60" d:DesignWidth="165">
+             d:DesignHeight="400" d:DesignWidth="550">
     <Grid>
-        <Border BorderBrush="Gray" BorderThickness="4" 
-        Height="50" Width="165" Background="White">
-            <TextBlock FontSize="16" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">Garden Orc Omelette</TextBlock>
-        </Border>
+        <ListBox Height="350" Margin="25" Background="Transparent">
+
+            
+            <CheckBox IsChecked="True" FontSize="15" Foreground="White">Tomato</CheckBox>
+            <CheckBox IsChecked="True" FontSize="15" Foreground="White">Broccoli</CheckBox>
+            <CheckBox IsChecked="True" FontSize="15" Foreground="White">Mushrooms</CheckBox>
+            <CheckBox IsChecked="True" FontSize="15" Foreground="White">Cheddar</CheckBox>
+        </ListBox>
+        <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">Customize the Garden Orc Omelette</TextBlock>
+        <Button Click="DoneClick" Name="Done" Height="50" Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="15" Margin="50">Done</Button>
     </Grid>
 </UserControl>

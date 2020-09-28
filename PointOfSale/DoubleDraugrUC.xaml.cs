@@ -18,9 +18,24 @@ namespace PointOfSale
     /// </summary>
     public partial class DoubleDraugrUC : UserControl
     {
-        public DoubleDraugrUC()
+        Border b;
+        /// <summary>
+        /// Constructor for the Double Draugr user control
+        /// </summary>
+        /// <param name="bo">Border for the main window</param>
+        public DoubleDraugrUC(Border bo)
         {
             InitializeComponent();
+            b = bo;
+        }
+        /// <summary>
+        /// Click event changing the screen to the user control that was cliked on
+        /// </summary>
+        /// <param name="sender">needed for click event</param>
+        /// <param name="e">needed for click event</param>
+        void DoneClick(Object sender, RoutedEventArgs e)
+        {
+            b.Child = new OrderOptions(b);
         }
     }
 }

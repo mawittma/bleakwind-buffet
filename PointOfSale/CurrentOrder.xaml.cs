@@ -23,6 +23,9 @@ namespace PointOfSale
     public partial class CurrentOrder : UserControl
     {
         List<IOrderItem> order = new List<IOrderItem>();
+        /// <summary>
+        /// Constructor for the current order user control
+        /// </summary>
         public CurrentOrder()
         {
             InitializeComponent();

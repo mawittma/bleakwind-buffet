@@ -21,11 +21,13 @@ namespace PointOfSale
     /// </summary>
     public partial class MainWindow : Window
     {
-        List<IOrderItem> order = new List<IOrderItem>();
+       /// <summary>
+       /// Constructor for the main window
+       /// </summary>
         public MainWindow()
         {
             InitializeComponent();
-            bigBorder.Child = new OrderOptions();
+            bigBorder.Child = new OrderOptions(bigBorder);
             smallBorder.Child = new CurrentOrder();
         }
     }

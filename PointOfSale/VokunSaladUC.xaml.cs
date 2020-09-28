@@ -18,9 +18,26 @@ namespace PointOfSale
     /// </summary>
     public partial class VokunSaladUC : UserControl
     {
-        public VokunSaladUC()
+        Border b;
+        /// <summary>
+        /// Constructor for the Vokun Salad user control
+        /// </summary>
+        /// <param name="bo">Border for the main window</param>
+        public VokunSaladUC(Border bo)
         {
             InitializeComponent();
+            b = bo;
         }
+        /// <summary>
+        /// Click event changing the screen to the user control that was cliked on
+        /// </summary>
+        /// <param name="sender">needed for click event</param>
+        /// <param name="e">needed for click event</param>
+        void DoneClick(Object sender, RoutedEventArgs e)
+        {
+            b.Child = new OrderOptions(b); 
+        }
+
+        
     }
 }

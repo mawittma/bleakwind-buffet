@@ -11,14 +11,17 @@
                 Order #100
         </TextBlock>
         <ListBox Name="listBox" VerticalAlignment="Top" Width="175" Height="200" Margin="25" Background="Black" Foreground="White" BorderThickness="0"></ListBox>
-        <TextBlock Width="150" Height="25" VerticalAlignment="Bottom" Foreground="White" TextWrapping="Wrap" FontSize="20" HorizontalAlignment="Center">             
-            Total: $18.25
-        </TextBlock>
-        <TextBlock Width="150" Height="25" VerticalAlignment="Bottom" Foreground="White" TextWrapping="Wrap" FontSize="20" Margin="25" HorizontalAlignment="Center">             
-            Tax: $0.67
-        </TextBlock>
-        <TextBlock Width="150" Height="25" VerticalAlignment="Bottom" Foreground="White" TextWrapping="Wrap" FontSize="20" Margin="50" HorizontalAlignment="Left">             
-            Total: $18.25
-        </TextBlock>
+
+        <ListBox Width="200" Height="100" VerticalAlignment="Bottom" Background="Transparent" HorizontalAlignment="Left">
+            <TextBlock Width="150" Height="25" Foreground="White" FontSize="20">             
+                Total: $18.25
+            </TextBlock>
+            <TextBlock Width="150" Height="25" Foreground="White"  FontSize="20" >             
+                Tax: $0.67
+            </TextBlock>
+            <TextBlock Width="150" Height="25" Foreground="White"  FontSize="20" >             
+                Total: $18.25
+            </TextBlock>
+        </ListBox>
     </Grid>
 </UserControl>

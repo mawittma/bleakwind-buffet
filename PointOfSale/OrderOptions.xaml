@@ -22,21 +22,25 @@
             <RowDefinition />
 
         </Grid.RowDefinitions>
-        <local:BriarheartBurgerUC Grid.Row="0" Grid.Column="0"></local:BriarheartBurgerUC>
-        <local:DoubleDraugrUC Grid.Row="1" Grid.Column="0"></local:DoubleDraugrUC>
-        <local:ThalmorTripleUC Grid.Row="2" Grid.Column="0"></local:ThalmorTripleUC>
-        <local:GardenOrcOmeletteUC Grid.Row="3" Grid.Column="0"></local:GardenOrcOmeletteUC>
-        <local:PhillyPoacherUC Grid.Row="4" Grid.Column="0"></local:PhillyPoacherUC>
-        <local:SmokehouseSkeletonUC Grid.Row="5" Grid.Column="0"></local:SmokehouseSkeletonUC>
-        <local:ThugsTBoneUC Grid.Row="6" Grid.Column="0"></local:ThugsTBoneUC>
-        <local:ArentinoAppleJuiceUC Grid.Row="0" Grid.Column="1"></local:ArentinoAppleJuiceUC>
-        <local:CandlehearthCoffeeUC Grid.Row="1" Grid.Column="1"></local:CandlehearthCoffeeUC>
-        <local:MarkarthMilkUC Grid.Row="2" Grid.Column="1"></local:MarkarthMilkUC>
-        <local:SailorSodaUC Grid.Row="3" Grid.Column="1"></local:SailorSodaUC>
-        <local:WarriorWaterUC Grid.Row="4" Grid.Column="1"></local:WarriorWaterUC>
-        <local:DragonBornWaffleFriesUC Grid.Row="0" Grid.Column="2"></local:DragonBornWaffleFriesUC>
-        <local:FriedMiraakUC Grid.Row="1" Grid.Column="2"></local:FriedMiraakUC>
-        <local:MadOtarGritsUC Grid.Row="2" Grid.Column="2"></local:MadOtarGritsUC>
-        <local:VokunSaladUC Grid.Row="3" Grid.Column="2"></local:VokunSaladUC>
+        <Button Click="Briarheart" Grid.Row="0" Grid.Column="0" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Briarheart Burger</Button>
+        <Button Click="Draugr" Grid.Row="1" Grid.Column="0" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Double Draugr</Button>
+        <Button Click="Thalmor" Grid.Row="2" Grid.Column="0" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Thalmor Triple</Button>
+        <Button Click="Philly" Grid.Row="3" Grid.Column="0" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Philly Poacher</Button>
+        <Button Click="Garden" Grid.Row="4" Grid.Column="0" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Garden Orc Omelette</Button>
+        <Button Click="Smokehouse" Grid.Row="5" Grid.Column="0" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Smokehouse Skeleton</Button>
+        <Button Click="Thugs" Grid.Row="6" Grid.Column="0" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Thugs T-Bone</Button>
+        
+        <Button Click="AppleJuice" Grid.Row="0" Grid.Column="1" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Arentino Apple Juice</Button>
+        <Button Click="Coffee" Grid.Row="1" Grid.Column="1" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Candlehearth Coffee</Button>
+        <Button Click="Milk" Grid.Row="2" Grid.Column="1" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Markarth Milk</Button>
+        <Button Click="Soda" Grid.Row="3" Grid.Column="1" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Sailor Soda</Button>
+        <Button Click="Warrior" Grid.Row="4" Grid.Column="1" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Warrior Water</Button>
+
+
+
+        <Button Click="Fries" Grid.Row="0" Grid.Column="2" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Dragon Waffle Fries</Button>
+        <Button Click="Miraak" Grid.Row="1" Grid.Column="2" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Fried Miraak</Button>
+        <Button Click="Grits" Grid.Row="2" Grid.Column="2" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Mad Otar Grits</Button>
+        <Button Click="Vokun" Grid.Row="3" Grid.Column="2" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Vokun Salad</Button>
     </Grid>
 </UserControl>
