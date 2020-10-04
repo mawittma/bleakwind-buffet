@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
@@ -8,19 +9,32 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// A class representing warrior water
     /// </summary>
-    public class WarriorWater : Drink, IOrderItem
+    public class WarriorWater : Drink, IOrderItem, INotifyPropertyChanged
     {
         //private variables for warrior water
         private bool ice = true;
         private bool lemon = false;
         private Size size = Size.Small;
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// If warrioir water has ice in it
         /// </summary>
         public bool Ice
         {
             get { return ice; }
-            set { ice = value; }
+            set {
+                if (value == true && ice == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+
+                }
+                else if (value == false && ice == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                }
+
+                ice = value;
+            }
         }
         /// <summary>
         /// The size of the water
@@ -28,7 +42,21 @@ namespace BleakwindBuffet.Data.Drinks
         public override Size Size
         {
             get { return size; }
-            set { size = value; }
+            set {
+                if (value == Size.Small && size != Size.Small)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                }
+                else if (value == Size.Medium && size != Size.Medium)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                }
+                else if (value == Size.Large && size != Size.Large)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                }
+                size = value;
+            }
         }
         /// <summary>
         /// If there is lemon in the water
@@ -36,7 +64,19 @@ namespace BleakwindBuffet.Data.Drinks
         public bool Lemon
         {
             get { return lemon; }
-            set { lemon = value; }
+            set {
+                if (value == true && lemon == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+
+                }
+                else if (value == false && lemon == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
+                }
+
+                lemon = value;
+            }
         }
         /// <summary>
         /// The price of the water based on size

@@ -3,6 +3,7 @@ using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data.Sides;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data
@@ -10,8 +11,9 @@ namespace BleakwindBuffet.Data
     /// <summary>
     /// A static class representing the menu
     /// </summary>
-    public static class Menu
+    public static class Menu 
     {
+        
         /// <summary>
         /// A method yield returns each entree on the menu
         /// </summary>

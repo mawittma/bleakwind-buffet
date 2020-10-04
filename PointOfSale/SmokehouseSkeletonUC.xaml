@@ -7,14 +7,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="550">
     <Grid>
-        <ListBox Height="350" Margin="25" Background="Transparent">
+        <StackPanel Height="350" Margin="25" Background="Transparent">
 
-            <CheckBox IsChecked="True" FontSize="15" Foreground="White">Sausage Link</CheckBox>
-            <CheckBox IsChecked="True" FontSize="15" Foreground="White">Egg</CheckBox>
-            <CheckBox IsChecked="True" FontSize="15" Foreground="White">Hashbrowns</CheckBox>
-            <CheckBox IsChecked="True" FontSize="15" Foreground="White">Pancakes</CheckBox>
+            <CheckBox IsChecked="{Binding Path=SausageLink}" FontSize="15" Foreground="White">Sausage Link</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Egg}" FontSize="15" Foreground="White">Egg</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Hashbrowns}" FontSize="15" Foreground="White">Hashbrowns</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Pancake}" FontSize="15" Foreground="White">Pancakes</CheckBox>
             
-        </ListBox>
+        </StackPanel>
         <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">Customize the Smokehouse Skeleton</TextBlock>
         <Button Click="DoneClick" Name="Done" Height="50" Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="15" Margin="50">Done</Button>
     </Grid>

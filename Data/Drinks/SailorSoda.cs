@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
@@ -8,19 +9,32 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// A class representing Sailor Soda
     /// </summary>
-    public class SailorSoda : Drink, IOrderItem
+    public class SailorSoda : Drink, IOrderItem, INotifyPropertyChanged
     {
         //private variables for Sailor Soda
         private bool ice = true;
         private Size size = Size.Small;
         private SodaFlavor flavor = SodaFlavor.Cherry;
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// If there is ice in the Sailor Soda
         /// </summary>
         public bool Ice
         {
             get { return ice; }
-            set { ice = value; }
+            set {
+                if (value == true && ice == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+
+                }
+                else if (value == false && ice == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                }
+
+                ice = value;
+            }
         }
         /// <summary>
         /// The size of the soda
@@ -28,7 +42,21 @@ namespace BleakwindBuffet.Data.Drinks
         public override Size Size
         {
             get { return size; }
-            set { size = value; }
+            set {
+                if (value == Size.Small && size != Size.Small)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                }
+                else if (value == Size.Medium && size != Size.Medium)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                }
+                else if (value == Size.Large && size != Size.Large)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                }
+                size = value;
+            }
         }
         /// <summary>
         /// The flavor of the sailor soda
@@ -36,7 +64,30 @@ namespace BleakwindBuffet.Data.Drinks
         public SodaFlavor Flavor
         {
             get { return flavor; }
-            set { flavor = value; }
+            set {
+                if (value == SodaFlavor.Cherry && flavor != SodaFlavor.Cherry)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                }
+                else if (value == SodaFlavor.Blackberry && flavor != SodaFlavor.Blackberry)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                }
+                else if (value == SodaFlavor.Grapefruit && flavor != SodaFlavor.Grapefruit)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                }else if(value == SodaFlavor.Lemon && flavor != SodaFlavor.Lemon)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                }else if(value == SodaFlavor.Peach && flavor != SodaFlavor.Peach)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                }else if(value == SodaFlavor.Watermelon && flavor != SodaFlavor.Watermelon)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Flavor"));
+                }
+                flavor = value;
+            }
         }
         /// <summary>
         /// The price of the soda based on size

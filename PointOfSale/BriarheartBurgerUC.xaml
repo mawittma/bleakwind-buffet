@@ -7,14 +7,14 @@
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="550">
     <Grid>
-        <ListBox Height="350" Margin="25" Background="Transparent">
+        <StackPanel Height="350" Margin="25" Background="Transparent">
             
-            <CheckBox IsChecked="True" FontSize="15" Foreground="White">Bun</CheckBox>
-            <CheckBox IsChecked="True" FontSize="15" Foreground="White">Ketchup</CheckBox>
-            <CheckBox IsChecked="True" FontSize="15" Foreground="White">Mustard</CheckBox>
-            <CheckBox IsChecked="True" FontSize="15" Foreground="White">Pickle</CheckBox>
-            <CheckBox IsChecked="True" FontSize="15" Foreground="White">Cheese</CheckBox>
-        </ListBox>
+            <CheckBox IsChecked="{Binding Path=Bun}" FontSize="15" Foreground="White">Bun</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Ketchup}" FontSize="15" Foreground="White">Ketchup</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Mustard}" FontSize="15" Foreground="White">Mustard</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Pickle}" FontSize="15" Foreground="White">Pickle</CheckBox>
+            <CheckBox IsChecked="{Binding Path=Cheese}" FontSize="15" Foreground="White">Cheese</CheckBox>
+        </StackPanel>
         <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">Customize the Briarheart Burger</TextBlock>
         <Button Click="DoneClick" Name="Done" Height="50" Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="15" Margin="50">Done</Button>
     </Grid>

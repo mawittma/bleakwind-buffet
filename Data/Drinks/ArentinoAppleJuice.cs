@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using BleakwindBuffet.Data.Enums;
 
@@ -8,18 +9,31 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class for representing a Arentino Apple Juice Drink
     /// </summary>
-    public class ArentinoAppleJuice : Drink, IOrderItem
+    public class ArentinoAppleJuice : Drink, IOrderItem, INotifyPropertyChanged
     {
         //private variables for Arentino Apple juice
         private bool ice = false;
         private Size size = Size.Small;
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// If this apple juice has ice in it
         /// </summary>
         public bool Ice
         {
             get { return ice; }
-            set { ice = value; }
+            set 
+            { 
+                if(value == true && ice == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                    
+                }else if(value == false && ice == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                }
+
+                ice = value; 
+            }
         }
         /// <summary>
         /// The size of the apple juice
@@ -27,7 +41,20 @@ namespace BleakwindBuffet.Data.Drinks
         public override Size Size
         {
             get { return size; }
-            set { size = value; }
+            set 
+            { 
+                if(value == Size.Small && size != Size.Small)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                }else if(value == Size.Medium && size != Size.Medium)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                }else if(value == Size.Large && size != Size.Large)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                }
+                size = value; 
+            }
         }
         /// <summary>
         /// The price of the apple juice based on its size

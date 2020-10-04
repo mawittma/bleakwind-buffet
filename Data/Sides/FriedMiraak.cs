@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Sides
@@ -8,17 +9,32 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// A class representing fried miraak
     /// </summary>
-    public class FriedMiraak : Side , IOrderItem
+    public class FriedMiraak : Side , IOrderItem, INotifyPropertyChanged
     {
         // private variables for miraak
         private Size size = Size.Small;
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// The size of the miraak
         /// </summary>
         public override Size Size
         {
             get { return size; }
-            set { size = value; }
+            set {
+                if (value == Size.Small && size != Size.Small)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                }
+                else if (value == Size.Medium && size != Size.Medium)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                }
+                else if (value == Size.Large && size != Size.Large)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                }
+                size = value;
+            }
         }
         /// <summary>
         /// The price of the miraak based on size

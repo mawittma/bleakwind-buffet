@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// A class to represent Thalmor Triple
     /// </summary>
-    public class ThalmorTriple : Entree, IOrderItem
+    public class ThalmorTriple : Entree, IOrderItem, INotifyPropertyChanged
     {
         // private variables for thalmor triple
         private bool bun = true;
@@ -20,13 +21,26 @@ namespace BleakwindBuffet.Data.Entrees
         private bool mayo = true;
         private bool bacon = true;
         private bool egg = true;
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// if there is a bun with thalmor triple
         /// </summary>
         public bool Bun
         {
             get { return bun; }
-            set { bun = value; }
+            set {
+                if (value == true && bun == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
+
+                }
+                else if (value == false && bun == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
+                }
+
+                bun = value;
+            }
         }
         /// <summary>
         /// if there is ketchup on the thalmor triple
@@ -34,7 +48,19 @@ namespace BleakwindBuffet.Data.Entrees
         public bool Ketchup
         {
             get { return ketchup; }
-            set { ketchup = value; }
+            set {
+                if (value == true && ketchup == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
+
+                }
+                else if (value == false && ketchup == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
+                }
+
+                ketchup = value;
+            }
         }
         /// <summary>
         /// if there is mustard in the thalmor triple
@@ -42,7 +68,19 @@ namespace BleakwindBuffet.Data.Entrees
         public bool Mustard
         {
             get { return mustard; }
-            set { mustard = value;}
+            set {
+                if (value == true && mustard == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
+
+                }
+                else if (value == false && mustard == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
+                }
+
+                mustard = value;
+            }
         }
         /// <summary>
         /// if there is pickles in the triple
@@ -50,7 +88,19 @@ namespace BleakwindBuffet.Data.Entrees
         public bool Pickle
         {
             get { return pickle; }
-            set { pickle = value; }
+            set {
+                if (value == true && pickle == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
+
+                }
+                else if (value == false && pickle == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
+                }
+
+                pickle = value;
+            }
         }
         /// <summary>
         /// if there is cheese on the triple
@@ -58,7 +108,19 @@ namespace BleakwindBuffet.Data.Entrees
         public bool Cheese
         {
             get { return cheese; }
-            set { cheese = value; }
+            set {
+                if (value == true && cheese == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
+
+                }
+                else if (value == false && cheese == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
+                }
+
+                cheese = value;
+            }
         }
         /// <summary>
         /// if there is tomato on the triple
@@ -66,7 +128,19 @@ namespace BleakwindBuffet.Data.Entrees
         public bool Tomato
         {
             get { return tomato; }
-            set { tomato = value; }
+            set {
+                if (value == true && tomato == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
+
+                }
+                else if (value == false && tomato == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
+                }
+
+                tomato = value;
+            }
         }
         /// <summary>
         /// if there is lettuce on the triple
@@ -74,7 +148,19 @@ namespace BleakwindBuffet.Data.Entrees
         public bool Lettuce
         {
             get { return lettuce; }
-            set { lettuce = value; }
+            set {
+                if (value == true && lettuce == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lettuce"));
+
+                }
+                else if (value == false && lettuce == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lettuce"));
+                }
+
+                lettuce = value;
+            }
         }
         /// <summary>
         /// if there is mayo on the triple
@@ -82,7 +168,19 @@ namespace BleakwindBuffet.Data.Entrees
         public bool Mayo
         {
             get { return mayo; }
-            set { mayo = value; }
+            set {
+                if (value == true && mayo == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mayo"));
+
+                }
+                else if (value == false && mayo == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mayo"));
+                }
+
+                mayo = value;
+            }
         }
         /// <summary>
         /// if there is bacon on the triple
@@ -90,7 +188,19 @@ namespace BleakwindBuffet.Data.Entrees
         public bool Bacon
         {
             get { return bacon; }
-            set { bacon = value; }
+            set {
+                if (value == true && bacon == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bacon"));
+
+                }
+                else if (value == false && bacon == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bacon"));
+                }
+
+                bacon = value;
+            }
         }
         /// <summary>
         /// if there is an egg on the triple
@@ -98,7 +208,19 @@ namespace BleakwindBuffet.Data.Entrees
         public bool Egg
         {
             get { return egg; }
-            set { egg = value; }
+            set {
+                if (value == true && egg == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Egg"));
+
+                }
+                else if (value == false && egg == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Egg"));
+                }
+
+                egg = value;
+            }
         }
         /// <summary>
         /// the price of the triple

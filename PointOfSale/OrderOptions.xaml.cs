@@ -10,6 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data.Entrees;
+using BleakwindBuffet.Data.Drinks;
+using BleakwindBuffet.Data.Sides;
 
 namespace PointOfSale
 {
@@ -36,7 +39,9 @@ namespace PointOfSale
         /// <param name="e">needed for click event</param>
         void Vokun(Object sender, RoutedEventArgs e)
         {
-            b.Child = new VokunSaladUC(b);
+            var vs = new VokunSaladUC(b);
+            vs.DataContext = new VokunSalad();
+            b.Child = vs;
         }
         /// <summary>
         /// Click event changing the screen to the user control that was cliked on
@@ -45,7 +50,9 @@ namespace PointOfSale
         /// <param name="e">needed for click event</param>
         void Grits(Object sender, RoutedEventArgs e)
         {
-            b.Child = new MadOtarGritsUC(b);
+            var mog = new MadOtarGritsUC(b);
+            mog.DataContext = new MadOtarGrits();
+            b.Child = mog;
         }
         /// <summary>
         /// Click event changing the screen to the user control that was cliked on
@@ -54,7 +61,9 @@ namespace PointOfSale
         /// <param name="e">needed for click event</param>
         void Miraak(Object sender, RoutedEventArgs e)
         {
-            b.Child = new FriedMiraakUC(b);
+            var fm = new FriedMiraakUC(b);
+            fm.DataContext = new FriedMiraak();
+            b.Child = fm;
         }
         /// <summary>
         /// Click event changing the screen to the user control that was cliked on
@@ -63,7 +72,9 @@ namespace PointOfSale
         /// <param name="e">needed for click event</param>
         void Fries(Object sender, RoutedEventArgs e)
         {
-            b.Child = new DragonBornWaffleFriesUC(b);
+            var dbw = new DragonBornWaffleFriesUC(b);
+            dbw.DataContext = new DragonbornWaffleFries();
+            b.Child = dbw;
         }
         /// <summary>
         /// Click event changing the screen to the user control that was cliked on
@@ -72,7 +83,9 @@ namespace PointOfSale
         /// <param name="e">needed for click event</param>
         void AppleJuice(Object sender, RoutedEventArgs e)
         {
-            b.Child = new ArentinoAppleJuiceUC(b);
+            var aa = new ArentinoAppleJuiceUC(b);
+            aa.DataContext = new ArentinoAppleJuice();
+            b.Child = aa;
         }
         /// <summary>
         /// Click event changing the screen to the user control that was cliked on
@@ -81,7 +94,9 @@ namespace PointOfSale
         /// <param name="e">needed for click event</param>
         void Coffee(Object sender, RoutedEventArgs e)
         {
-            b.Child = new CandlehearthCoffeeUC(b);
+            var cc = new CandlehearthCoffeeUC(b);
+            cc.DataContext = new CandlehearthCoffee();
+            b.Child = cc;
         }
         /// <summary>
         /// Click event changing the screen to the user control that was cliked on
@@ -90,7 +105,9 @@ namespace PointOfSale
         /// <param name="e">needed for click event</param>
         void Milk(Object sender, RoutedEventArgs e)
         {
-            b.Child = new MarkarthMilkUC(b);
+            var mm = new MarkarthMilkUC(b);
+            mm.DataContext = new MarkarthMilk();
+            b.Child = mm;
         }
         /// <summary>
         /// Click event changing the screen to the user control that was cliked on
@@ -99,7 +116,9 @@ namespace PointOfSale
         /// <param name="e">needed for click event</param>
         void Soda(Object sender, RoutedEventArgs e)
         {
-            b.Child = new SailorSodaUC(b);
+            var ss = new SailorSodaUC(b);
+            ss.DataContext = new SailorSoda();
+            b.Child = ss;
         }
         /// <summary>
         /// Click event changing the screen to the user control that was cliked on
@@ -108,7 +127,9 @@ namespace PointOfSale
         /// <param name="e">needed for click event</param>
         void Warrior(Object sender, RoutedEventArgs e)
         {
-            b.Child = new WarriorWaterUC(b);
+            var ww = new WarriorWaterUC(b);
+            ww.DataContext = new WarriorWater();
+            b.Child = ww;
         }
         /// <summary>
         /// Click event changing the screen to the user control that was cliked on
@@ -117,7 +138,10 @@ namespace PointOfSale
         /// <param name="e">needed for click event</param>
         void Briarheart(Object sender,RoutedEventArgs e)
         {
-            b.Child = new BriarheartBurgerUC(b);
+            
+            var bb = new BriarheartBurgerUC(b);
+            bb.DataContext = new BriarheartBurger();
+            b.Child = bb;
         }
         /// <summary>
         /// Click event changing the screen to the user control that was cliked on
@@ -126,7 +150,10 @@ namespace PointOfSale
         /// <param name="e">needed for click event</param>
         void Draugr(Object sender, RoutedEventArgs e)
         {
-            b.Child = new DoubleDraugrUC(b);
+            var dd = new DoubleDraugrUC(b);
+            dd.DataContext = new DoubleDraugr();
+            b.Child = dd;
+            
         }
         /// <summary>
         /// Click event changing the screen to the user control that was cliked on
@@ -135,7 +162,9 @@ namespace PointOfSale
         /// <param name="e">needed for click event</param>
         void Thalmor(Object sender, RoutedEventArgs e)
         {
-            b.Child = new ThalmorTripleUC(b);
+            var tt = new ThalmorTripleUC(b);
+            tt.DataContext = new ThalmorTriple();
+            b.Child = tt;
         }
         /// <summary>
         /// Click event changing the screen to the user control that was cliked on
@@ -144,7 +173,10 @@ namespace PointOfSale
         /// <param name="e">needed for click event</param>
         void Philly(Object sender, RoutedEventArgs e)
         {
-            b.Child = new PhillyPoacherUC(b);
+            var pp = new PhillyPoacherUC(b);
+            pp.DataContext = new PhillyPoacher();
+            b.Child = pp;
+            
         }
         /// <summary>
         /// Click event changing the screen to the user control that was cliked on
@@ -153,7 +185,10 @@ namespace PointOfSale
         /// <param name="e">needed for click event</param>
         void Garden(Object sender, RoutedEventArgs e)
         {
-            b.Child = new GardenOrcOmeletteUC(b);
+            var goo = new GardenOrcOmeletteUC(b);
+            goo.DataContext = new GardenOrcOmelette();
+            b.Child = goo;
+            
         }
         /// <summary>
         /// Click event changing the screen to the user control that was cliked on
@@ -162,7 +197,10 @@ namespace PointOfSale
         /// <param name="e">needed for click event</param>
         void Smokehouse(Object sender, RoutedEventArgs e)
         {
-            b.Child = new SmokehouseSkeletonUC(b);
+            var ss = new SmokehouseSkeletonUC(b);
+            ss.DataContext = new SmokehouseSkeleton();
+            b.Child = ss;
+            
         }
         /// <summary>
         /// Click event changing the screen to the user control that was cliked on
@@ -171,7 +209,9 @@ namespace PointOfSale
         /// <param name="e">needed for click event</param>
         void Thugs(Object sender,RoutedEventArgs e)
         {
-            b.Child = new ThugsTBoneUC(b);
+            var tt = new ThugsTBoneUC(b);
+            tt.DataContext = new ThugsTBone();
+            b.Child = tt;
         }
     }
 }

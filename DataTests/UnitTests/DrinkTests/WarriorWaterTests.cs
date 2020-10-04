@@ -9,8 +9,61 @@ using System.Runtime.Serialization;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
+
     public class WarriorWaterTests
     {
+        [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+
+            var ww = new WarriorWater();
+
+            Assert.PropertyChanged(ww, "Ice", () =>
+            {
+                ww.Ice = false;
+            });
+
+            Assert.PropertyChanged(ww, "Ice", () =>
+            {
+                ww.Ice = true;
+            });
+        }
+        [Fact]
+        public void ChangingLemonNotifiesLemonProperty()
+        {
+
+            var ww = new WarriorWater();
+
+            Assert.PropertyChanged(ww, "Lemon", () =>
+            {
+                ww.Lemon = true;
+            });
+
+            Assert.PropertyChanged(ww, "Lemon", () =>
+            {
+                ww.Lemon = false;
+            });
+        }
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+
+            var ww = new WarriorWater();
+
+            Assert.PropertyChanged(ww, "Size", () =>
+            {
+                ww.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(ww, "Size", () =>
+            {
+                ww.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(ww, "Size", () =>
+            {
+                ww.Size = Size.Small;
+            });
+        }
         [Fact]
         public void ShouldBeIOrderItem()
         {

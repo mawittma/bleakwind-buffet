@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
@@ -7,13 +8,14 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// A class to represent the garden orc omelette
     /// </summary>
-    public class GardenOrcOmelette : Entree, IOrderItem
+    public class GardenOrcOmelette : Entree, IOrderItem, INotifyPropertyChanged
     {
         // private variables for the garden orc omelette
         private bool broccoli = true;
         private bool mushrooms = true;
         private bool tomato = true;
         private bool cheddar = true;
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// If there is broccoli in the omelette
         /// </summary>
@@ -22,7 +24,17 @@ namespace BleakwindBuffet.Data.Entrees
             get { return broccoli; }
             set 
             {
-                broccoli = value; 
+                if (value == true && broccoli == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Broccoli"));
+
+                }
+                else if (value == false && broccoli == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Broccoli"));
+                }
+
+                broccoli = value;
             }
         }
         /// <summary>
@@ -32,9 +44,20 @@ namespace BleakwindBuffet.Data.Entrees
         {
             get { return mushrooms; }
             set 
-            { 
-                mushrooms = value; 
+            {
+                if (value == true && mushrooms == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mushrooms"));
+
+                }
+                else if (value == false && mushrooms == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mushrooms"));
+                }
+
+                mushrooms = value;
             }
+        
         }
         /// <summary>
         /// If there is tomato in the omelette
@@ -42,7 +65,19 @@ namespace BleakwindBuffet.Data.Entrees
         public bool Tomato
         {
             get { return tomato; }
-            set { tomato = value; }
+            set {
+                if (value == true && tomato == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
+
+                }
+                else if (value == false && tomato == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
+                }
+
+                tomato = value;
+            }
         }
         /// <summary>
         /// If there is cheddar on the omelette
@@ -50,7 +85,19 @@ namespace BleakwindBuffet.Data.Entrees
         public bool Cheddar
         {
             get { return cheddar; }
-            set { cheddar = value; }
+            set {
+                if (value == true && cheddar == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheddar"));
+
+                }
+                else if (value == false && cheddar == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheddar"));
+                }
+
+                cheddar = value;
+            }
         }
         /// <summary>
         /// The price of the omelette

@@ -11,7 +11,8 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class DoubleDraugrTests
     {
-        [Fact]
+        
+        [Fact] 
         public void ShouldBeIOrderItem()
         {
             DoubleDraugr dd = new DoubleDraugr();

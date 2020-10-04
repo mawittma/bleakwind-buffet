@@ -3,17 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:PointOfSale"
+             xmlns:system="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:BleakwindBuffet.Data.Enums;assembly=Data"
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="550">
+    <UserControl.Resources>
+        <ObjectDataProvider x:Key="sizes" ObjectType="system:Enum" MethodName="GetValues">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="local:Size"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </UserControl.Resources>
     <Grid>
-        <ListBox Height="350" Margin="25" Background="Transparent">
-            <ComboBox Height="30" Width="125">
-                <ComboBoxItem IsSelected="True">Small</ComboBoxItem>
-                <ComboBoxItem>Medium</ComboBoxItem>
-                <ComboBoxItem>Large</ComboBoxItem>
+        <StackPanel Height="350" Margin="25" Background="Transparent">
+            <ComboBox Height="30" Width="125" HorizontalAlignment="Left" ItemsSource="{Binding Source={StaticResource sizes}}" SelectedItem="{Binding Path=Size}">
             </ComboBox>
-        </ListBox>
+        </StackPanel>
         <TextBlock Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10">Customize the Dragonborn Waffle Fries</TextBlock>
         <Button Click="DoneClick" Name="Done" Height="50" Width="100" HorizontalAlignment="Right" VerticalAlignment="Bottom" FontSize="15" Margin="50">Done</Button>
     </Grid>

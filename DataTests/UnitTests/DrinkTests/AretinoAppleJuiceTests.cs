@@ -15,6 +15,44 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
     public class AretinoAppleJuiceTests
     {
         [Fact]
+        public void ChangingIceNotifiesIceProperty()
+        {
+
+            var AJ = new ArentinoAppleJuice();
+
+            Assert.PropertyChanged(AJ, "Ice", () =>
+            {
+                AJ.Ice = true;
+            });
+
+            Assert.PropertyChanged(AJ, "Ice", () =>
+            {
+                AJ.Ice = false;
+            });
+        }
+
+        [Fact]
+        public void ChangingSizeNotifiesSizeProperty()
+        {
+
+            var AJ = new ArentinoAppleJuice();
+
+            Assert.PropertyChanged(AJ, "Size", () =>
+            {
+                AJ.Size = Size.Large;
+            });
+
+            Assert.PropertyChanged(AJ, "Size", () =>
+            {
+                AJ.Size = Size.Medium;
+            });
+            Assert.PropertyChanged(AJ, "Size", () =>
+            {
+                AJ.Size = Size.Small;
+            });
+        }
+
+        [Fact]
         public void ShouldBeIOrderItem()
         {
             ArentinoAppleJuice aj = new ArentinoAppleJuice();

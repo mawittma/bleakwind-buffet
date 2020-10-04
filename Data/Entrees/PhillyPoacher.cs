@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Entrees
@@ -7,19 +8,32 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// A class representing a Philly Poacher
     /// </summary>
-    public class PhillyPoacher :Entree, IOrderItem
+    public class PhillyPoacher :Entree, IOrderItem, INotifyPropertyChanged
     {
         // private variables for the philly poacher
         private bool sirloin = true;
         private bool onion = true;
         private bool roll = true;
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// If there is sirloin in the philly
         /// </summary>
         public bool Sirloin
         {
             get { return sirloin; }
-            set { sirloin = value; }
+            set {
+                if (value == true && sirloin == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sirloin"));
+
+                }
+                else if (value == false && sirloin  == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Sirloin"));
+                }
+
+                sirloin = value;
+            }
         }
         /// <summary>
         /// If there is onion in your philly
@@ -27,7 +41,19 @@ namespace BleakwindBuffet.Data.Entrees
         public bool Onion
         {
             get { return onion; }
-            set { onion = value; }
+            set {
+                if (value == true && onion == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Onion"));
+
+                }
+                else if (value == false && onion == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Onion"));
+                }
+
+                onion = value;
+            }
         }
         /// <summary>
         /// If there is a roll with philly
@@ -35,7 +61,19 @@ namespace BleakwindBuffet.Data.Entrees
         public bool Roll
         {
             get { return roll; }
-            set { roll = value; }
+            set {
+                if (value == true && roll == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Roll"));
+
+                }
+                else if (value == false && roll == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Roll"));
+                }
+
+                roll = value;
+            }
         }
         /// <summary>
         /// The price of the philly

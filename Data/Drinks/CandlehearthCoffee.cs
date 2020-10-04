@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.ComponentModel;
 using BleakwindBuffet.Data.Enums;
 
 namespace BleakwindBuffet.Data.Drinks
@@ -8,20 +9,33 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Class representing a Candle Heart Coffee
     /// </summary>
-    public class CandlehearthCoffee : Drink, IOrderItem
+    public class CandlehearthCoffee : Drink, IOrderItem, INotifyPropertyChanged
     {
         //Private variables for the Candle Heart Coffee
         private bool ice = false;
         private bool decaf = false;
         private bool roomForCream = false;
         private Size size = Size.Small;
+        public event PropertyChangedEventHandler PropertyChanged;
         /// <summary>
         /// If this coffee has ice in it
         /// </summary>
         public bool Ice
         {
             get { return ice; }
-            set { ice = value; }
+            set {
+                if (value == true && ice == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+
+                }
+                else if (value == false && ice == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
+                }
+
+                ice = value;
+            }
         }
         /// <summary>
         /// The size of this coffee
@@ -29,7 +43,21 @@ namespace BleakwindBuffet.Data.Drinks
         public override Size Size
         {
             get { return size; }
-            set { size = value; }
+            set {
+                if (value == Size.Small && size != Size.Small)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                }
+                else if (value == Size.Medium && size != Size.Medium)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                }
+                else if (value == Size.Large && size != Size.Large)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+                }
+                size = value;
+            }
         }
 
         /// <summary>
@@ -38,7 +66,19 @@ namespace BleakwindBuffet.Data.Drinks
         public bool Decaf
         {
             get { return decaf; }
-            set { decaf = value; }
+            set {
+                if (value == true && decaf == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+
+                }
+                else if (value == false && decaf == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Decaf"));
+                }
+
+                decaf = value;
+            }
         }
         /// <summary>
         /// If there should be room for cream in the coffee
@@ -46,7 +86,19 @@ namespace BleakwindBuffet.Data.Drinks
         public bool RoomForCream
         {
             get { return roomForCream; }
-            set { roomForCream = value; }
+            set {
+                if (value == true && roomForCream == false)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
+
+                }
+                else if (value == false && roomForCream == true)
+                {
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("RoomForCream"));
+                }
+
+                roomForCream = value;
+            }
         }
         /// <summary>
         /// The price of the coffee based on size
