@@ -8,12 +8,25 @@ using Xunit;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Sides;
 using BleakwindBuffet.Data.Enums;
+using System.ComponentModel;
 using Newtonsoft.Json.Bson;
 
 namespace BleakwindBuffet.DataTests.UnitTests.SideTests
 {
     public class DragonbornWaffleFriesTests
     {
+        [Fact]
+        public void IsAssignableFromINotifyPropertyChanged()
+        {
+            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(dwf);
+        }
+        [Fact]
+        public void IsAssignableFromIOrderItem()
+        {
+            DragonbornWaffleFries dwf = new DragonbornWaffleFries();
+            Assert.IsAssignableFrom<IOrderItem>(dwf);
+        }
         [Fact]
         public void ChangingSizeNotifiesSizeProperty()
         {

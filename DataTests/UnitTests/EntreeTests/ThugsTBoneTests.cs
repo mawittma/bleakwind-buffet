@@ -6,11 +6,24 @@
 using Xunit;
 using BleakwindBuffet.Data.Entrees;
 using BleakwindBuffet.Data;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
 {
     public class ThugsTBoneTests
     {
+        [Fact]
+        public void IsAssignableFromINotifyPropertyChanged()
+        {
+            ThugsTBone ttb = new ThugsTBone();
+            Assert.IsAssignableFrom<INotifyPropertyChanged>(ttb);
+        }
+        [Fact]
+        public void IsAssignableFromIOrderItem()
+        {
+            ThugsTBone ttb = new ThugsTBone();
+            Assert.IsAssignableFrom<IOrderItem>(ttb);
+        }
         [Fact]
         public void ShouldBeIOrderItem()
         {

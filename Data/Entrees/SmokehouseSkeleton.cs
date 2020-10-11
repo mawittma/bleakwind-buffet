@@ -116,10 +116,26 @@ namespace BleakwindBuffet.Data.Entrees
             get
             {
                 List<string> instructions = new List<string>();
-                if (!SausageLink) instructions.Add("Hold sausage");
-                if (!Egg) instructions.Add("Hold eggs");
-                if (!Hashbrowns) instructions.Add("Hold hash browns");
-                if (!Pancake) instructions.Add("Hold pancakes");
+                if (!SausageLink)
+                {
+                    instructions.Add("Hold sausage");
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                }
+                if (!Egg)
+                {
+                    instructions.Add("Hold eggs");
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                }
+                if (!Hashbrowns)
+                {
+                    instructions.Add("Hold hash browns");
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                }
+                if (!Pancake)
+                {
+                    instructions.Add("Hold pancakes");
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+                }
                 return instructions;
             }
         }
