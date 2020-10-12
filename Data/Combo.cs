@@ -8,6 +8,9 @@ using BleakwindBuffet.Data.Sides;
 
 namespace BleakwindBuffet.Data
 {
+    /// <summary>
+    /// A new possible option for the user to pick a combo 
+    /// </summary>
     public class Combo: IOrderItem, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;

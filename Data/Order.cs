@@ -7,9 +7,12 @@ using System.Text;
 
 namespace BleakwindBuffet.Data
 {
+    /// <summary>
+    /// The current order that the user is adding to
+    /// </summary>
     public class Order: ICollection<IOrderItem>, INotifyCollectionChanged, INotifyPropertyChanged
     {
-        private List<IOrderItem> order = new List<IOrderItem>();
+        public List<IOrderItem> order = new List<IOrderItem>();
         private double salesTaxRate = .12;
         private static int nextOrderNumber = 1;
         private uint calories = 0;
@@ -113,11 +116,12 @@ namespace BleakwindBuffet.Data
         public void Add(IOrderItem item)
         {
             order.Add(item);
+            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tax"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Total"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
-            CollectionChanged += CollectionChangedListener;
+            
         }
         /// <summary>
         /// A method removing a item from the order collection
@@ -126,39 +130,16 @@ namespace BleakwindBuffet.Data
         public void Remove(IOrderItem item)
         {
             order.Remove(item);
+            CollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, item));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Subtotal"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tax"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Total"));
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
-            CollectionChanged += CollectionChangedListener;
+            
 
         }
 
-        void CollectionChangedListener(object sender, NotifyCollectionChangedEventArgs e)
-        {
-            switch(e.Action)
-            {
-                case NotifyCollectionChangedAction.Add:
-                    foreach(IOrderItem item in e.NewItems)
-                    {
-                        item.PropertyChanged += CollectionItemChangedListener;
-                    }
-                    break;
-                case NotifyCollectionChangedAction.Remove:
-                    foreach(IOrderItem item in e.OldItems)
-                    {
-                        item.PropertyChanged -= CollectionItemChangedListener;
-                    }
-                    break;
-                case NotifyCollectionChangedAction.Reset:
-                    throw new NotImplementedException("NotifyCollectionChangedAction.Reset not supported");
-            }
-        }
-
-        void CollectionItemChangedListener(object sender, PropertyChangedEventArgs e)
-        {
-
-        }
+        
         public void Clear()
         {
             order.Clear();
@@ -188,12 +169,12 @@ namespace BleakwindBuffet.Data
 
         public IEnumerator<IOrderItem> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return order.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return ((IEnumerable)order).GetEnumerator();
         }
     }
 }

@@ -7,21 +7,35 @@
              mc:Ignorable="d" 
              d:DesignHeight="400" d:DesignWidth="200">
     <Grid>
-        <TextBlock Width="100" Height="20" TextAlignment="Center" VerticalAlignment="Top" Foreground="White">
-                Order #100
-        </TextBlock>
-        <ListBox Name="listBox" VerticalAlignment="Top" Width="175" Height="200" Margin="25" Background="Black" Foreground="White" BorderThickness="0"></ListBox>
+        <StackPanel Width="100" Height="20"  VerticalAlignment="Top" >
+            <TextBlock Text="Order #" Margin="10 0" Foreground="White"/>
+            <TextBlock Name="OrderNum" Text="{Binding Path=Number}" Margin="52 -16 0 0" Foreground="White"/>
+
+        </StackPanel>
+        <StackPanel Name="sp" VerticalAlignment="Top" Width="200" Height="270" Margin="0 25 0 105" Background="Black" >
+            <TextBlock Name="ordStr" Height="270" Width="175" Foreground="White"/>
+            
+        </StackPanel>
 
         <ListBox Width="200" Height="100" VerticalAlignment="Bottom" Background="Transparent" HorizontalAlignment="Left">
-            <TextBlock Width="150" Height="25" Foreground="White" FontSize="20">             
-                Total: $18.25
-            </TextBlock>
-            <TextBlock Width="150" Height="25" Foreground="White"  FontSize="20" >             
-                Tax: $0.67
-            </TextBlock>
-            <TextBlock Width="150" Height="25" Foreground="White"  FontSize="20" >             
-                Total: $18.25
-            </TextBlock>
+            <StackPanel Width="150" Height="25" >
+                <TextBlock  Foreground="White" FontSize="20">             
+                    SubTotal: 
+                </TextBlock>
+                <TextBlock Foreground="White" Text="{Binding Path=Subtotal,StringFormat={}${0:###.##}}" Margin="83 -26 0 0" FontSize="20"/>
+            </StackPanel>
+            <StackPanel  Width="150" Height="25" >
+                <TextBlock  Foreground="White"  FontSize="20" >             
+                    Tax: 
+                </TextBlock>
+                <TextBlock Foreground="White" Text="{Binding Path=Tax,StringFormat={}${0:###.##}}" Margin="35 -27 0 0" FontSize="20"/>
+            </StackPanel>
+            <StackPanel Width="150" Height="25">
+                <TextBlock  Foreground="White"  FontSize="20" >             
+                    Total: 
+                </TextBlock>
+                <TextBlock Foreground="White" Text="{Binding Path=Total,StringFormat={}${0:###.##}}" Margin="50 -27 0 0" FontSize="20"/>
+            </StackPanel>
         </ListBox>
     </Grid>
 </UserControl>

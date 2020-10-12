@@ -23,16 +23,39 @@ namespace PointOfSale
     public partial class CurrentOrder : UserControl
     {
         List<IOrderItem> order = new List<IOrderItem>();
+        public Order o;
         /// <summary>
         /// Constructor for the current order user control
         /// </summary>
-        public CurrentOrder()
+        public CurrentOrder(Order ord)
         {
+            
             InitializeComponent();
-            order.Add(new BriarheartBurger());
-            order.Add(new VokunSalad());
-            order.Add(new MarkarthMilk());
-            listBox.ItemsSource = order;
+
+            o = ord;
+            DataContext = o;
+            
+            //SetOrder();
+        }
+
+        public void SetOrder()
+        {
+            
+            string tempStr = "";
+            
+            for(int i = 0; i < o.order.Count;i++)
+            {
+                tempStr += ((i+1)+". "+o.order[i].ToString() + "\t$"+o.order[i].Price +"\n");
+                for (int j = 0; j < o.order[i].SpecialInstructions.Count; j++)
+                {
+                    tempStr += "  - "+ (o.order[i].SpecialInstructions[j] + "\n");
+                }
+                
+            }
+            Console.WriteLine(o.Subtotal);
+            Console.WriteLine(o.Tax);
+            Console.WriteLine(o.Total);
+            ordStr.Text = tempStr;
         }
     }
 }

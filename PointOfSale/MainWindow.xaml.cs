@@ -27,8 +27,14 @@ namespace PointOfSale
         public MainWindow()
         {
             InitializeComponent();
-            bigBorder.Child = new OrderOptions(bigBorder);
-            smallBorder.Child = new CurrentOrder();
+            //DataContext = new Order();
+            
+            
+            Order ord = new Order();
+            CurrentOrder co = new CurrentOrder(ord);
+            bigBorder.Child = new OrderOptions(bigBorder, ord, co,smallBorder);
+            
+            smallBorder.Child = co;
         }
     }
 }

@@ -43,7 +43,7 @@
         <Button Click="Grits" Grid.Row="2" Grid.Column="2" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Mad Otar Grits</Button>
         <Button Click="Vokun" Grid.Row="3" Grid.Column="2" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Vokun Salad</Button>
 
-        <Button Grid.Row="5" Grid.Column="2" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Cancel Order</Button>
-        <Button Grid.Row="6" Grid.Column="2" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Proceed to Payment</Button>
+        <Button Click="NewOrder" Grid.Row="5" Grid.Column="2" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Cancel Order</Button>
+        <Button Click="NewOrder" Grid.Row="6" Grid.Column="2" Margin="10" FontSize="15" Background="Transparent" Foreground="White">New Order</Button>
     </Grid>
 </UserControl>

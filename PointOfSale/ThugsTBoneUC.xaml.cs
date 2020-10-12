@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BleakwindBuffet.Data;
 
 namespace PointOfSale
 {
@@ -18,15 +19,20 @@ namespace PointOfSale
     /// </summary>
     public partial class ThugsTBoneUC : UserControl
     {
-        Border b;
+        Border b,sb;
+        CurrentOrder co;
+        Order o;
         /// <summary>
         /// Constructor for the Thugs T-Bone user control
         /// </summary>
         /// <param name="bo">Border for the Main window</param>
-        public ThugsTBoneUC(Border bo)
+        public ThugsTBoneUC(Border bo,Order ord, CurrentOrder curOrd, Border small)
         {
             InitializeComponent();
             b = bo;
+            co = curOrd;
+            o = ord;
+            sb = small;
         }
         /// <summary>
         /// Click event changing the screen to the user control that was cliked on
@@ -35,7 +41,8 @@ namespace PointOfSale
         /// <param name="e">needed for click event</param>
         void DoneClick(Object sender, RoutedEventArgs e)
         {
-            b.Child = new OrderOptions(b);
+            co.SetOrder();
+            b.Child = new OrderOptions(b,o,co,sb);
         }
     }
 }
