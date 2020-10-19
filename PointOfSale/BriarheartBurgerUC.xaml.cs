@@ -22,6 +22,7 @@ namespace PointOfSale
         Border b,sb;
         CurrentOrder co;
         Order o;
+        Combo com;
         /// <summary>
         /// Constructor for the briarheart burger user control
         /// </summary>
@@ -33,6 +34,11 @@ namespace PointOfSale
             co = curOrd;
             o = ord;
             sb = small;
+            com = null;
+        }
+        public void InitCombo(Combo c)
+        {
+            com = c;
         }
         /// <summary>
         /// Click event changing the screen to the user control that was cliked on
@@ -41,8 +47,17 @@ namespace PointOfSale
         /// <param name="e">needed for click event</param>
         void DoneClick(Object sender, RoutedEventArgs e)
         {
-            co.SetOrder();
-            b.Child = new OrderOptions(b,o,co,sb);
+            if(com == null)
+            {
+                co.SetOrder();
+                b.Child = new OrderOptions(b, o, co, sb);
+            }
+            else
+            {
+                b.Child = new ComboSideUC(b,o,co,sb,com);
+            }
+            
+            
         }
     }
 }

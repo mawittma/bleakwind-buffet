@@ -198,7 +198,7 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
         {
             SailorSoda ss = new SailorSoda();
             ss.Ice = includeIce;
-            if (includeIce) Assert.Contains("Hold ice", ss.SpecialInstructions);
+            if (!includeIce) Assert.Contains("Hold ice", ss.SpecialInstructions);
             else Assert.Empty(ss.SpecialInstructions);
         }
         

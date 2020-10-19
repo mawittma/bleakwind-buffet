@@ -42,12 +42,23 @@ namespace PointOfSale
             DataContext = ord;
             
         }
+        void CompleteOrder(Object sender, RoutedEventArgs e)
+        {
+            b.Child = new PaymentOptionsUC(b,ord,co,sb);
+        }
+
+        void ComboStart(Object sender, RoutedEventArgs e)
+        {
+            var com = new ComboEntreeUC(b, ord, co, sb);
+            b.Child = com;
+            
+        }
         /// <summary>
         /// Creates a new order for the user
         /// </summary>
         /// <param name="sender">needed for event</param>
         /// <param name="e">needed for event</param>
-        void NewOrder(Object sender, RoutedEventArgs e)
+        public void NewOrder(Object sender, RoutedEventArgs e)
         {
             ord = new Order();
             co = new CurrentOrder(ord);

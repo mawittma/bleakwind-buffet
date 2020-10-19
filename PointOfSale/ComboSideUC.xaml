@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="PointOfSale.ComboSideUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PointOfSale"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="550">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+
+
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            
+            
+
+        </Grid.RowDefinitions>
+        <Button Click="Fries" Grid.Row="0" Grid.Column="2" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Dragon Waffle Fries</Button>
+        <Button Click="Miraak" Grid.Row="1" Grid.Column="2" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Fried Miraak</Button>
+        <Button Click="Grits" Grid.Row="2" Grid.Column="2" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Mad Otar Grits</Button>
+        <Button Click="Vokun" Grid.Row="3" Grid.Column="2" Margin="10" FontSize="15" Background="Transparent" Foreground="White">Vokun Salad</Button>
+    </Grid>
+</UserControl>
