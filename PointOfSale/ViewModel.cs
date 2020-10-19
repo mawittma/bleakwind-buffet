@@ -7,8 +7,15 @@ using RoundRegister;
 
 namespace PointOfSale
 {
+    /// <summary>
+    /// ViewModel class of MVVM class architechture
+    /// </summary>
     public class ViewModel : INotifyPropertyChanged
     {
+        /// <summary>
+        /// Property Changed Event
+        /// all private backing variables
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
         private int penniesCust = 0;
         private int nickelCust = 0;
@@ -27,11 +34,18 @@ namespace PointOfSale
 
         
         private double orderTotal;
+        /// <summary>
+        /// constructor of the ViewModel Class
+        /// </summary>
+        /// <param name="total"></param>
         public ViewModel(double total)
         {
             orderTotal = total;
         }
-
+        
+        /// <summary>
+        /// Determines what the worker should give back the customer in change
+        /// </summary>
         public void WhatToReturn()
         {
             changeOwed = ChangeOwed;
@@ -151,24 +165,69 @@ namespace PointOfSale
 
 
         }
+        /// <summary>
+        /// the amount of Hundred Dollar bills in change
+        /// </summary>
         public int HunDollChange{ get; set; }
+        /// <summary>
+        ///the amount of Fifty Dollar bills in change
+        /// </summary>
         public int FiftyDollChange { get; set; }
+        /// <summary>
+        /// the amount of Twenty Dollar bills in change
+        /// </summary>
         public int TwentyDollChange { get; set; }
+        /// <summary>
+        /// the amount of Ten Dollar bills in change
+        /// </summary>
         public int TenDollChange { get; set; }
+        /// <summary>
+        /// the amount of Five Dollar bills in change
+        /// </summary>
         public int FiveDollChange { get; set; }
+        /// <summary>
+        /// the amount of two Dollar bills in change
+        /// </summary>
         public int TwoDollChange { get; set; }
+        /// <summary>
+        /// the amount of One Dollar bills in change
+        /// </summary>
         public int OneDollChange { get; set; }
 
+        /// <summary>
+        /// the amount of one Dollar coins in change
+        /// </summary>
         public int OneDollCoinChange { get; set; }
+        /// <summary>
+        /// the amount of half Dollar coins in change
+        /// </summary>
         public int HalfDollChange { get; set; }
+        /// <summary>
+        /// the amount of quarters in change
+        /// </summary>
         public int QuartersChange { get; set; }
+        /// <summary>
+        /// the amount of Dimes in change
+        /// </summary>
         public int DimesChange { get; set; }
+        /// <summary>
+        /// the amount of nickels in change
+        /// </summary>
         public int NickelsChange { get; set; }
+        /// <summary>
+        /// the amount of pennies in change
+        /// </summary>
         public int PenniesChange { get; set; }
+        /// <summary>
+        /// the order total
+        /// </summary>
         public double OrderTotal
         {
             get { return orderTotal; }
         }
+        /// <summary>
+        /// the change owed to customer
+        /// </summary>
         public double ChangeOwed
         {
             get
@@ -188,6 +247,9 @@ namespace PointOfSale
             }
             
         }
+        /// <summary>
+        /// amount the customer must pay
+        /// </summary>
         public double AmountDue
         {
             get
@@ -207,6 +269,9 @@ namespace PointOfSale
                 }
             }
         }
+        /// <summary>
+        /// customer Total that he has payed in
+        /// </summary>
         
         public double CustTotal
         {
@@ -218,6 +283,9 @@ namespace PointOfSale
             }
         }
         
+        /// <summary>
+        /// the amount of hundred dollar bills the customer gave
+        /// </summary>
 
         public int HunDollCust
         {
@@ -232,6 +300,9 @@ namespace PointOfSale
                 }
             }
         }
+        /// <summary>
+        /// the amount of hundred fifty bills the customer gave
+        /// </summary>
         public int FiftyDollCust
         {
             get { return fiftyDollCust; }
@@ -245,6 +316,9 @@ namespace PointOfSale
                 }
             }
         }
+        /// <summary>
+        /// the amount of Twenty dollar bills the customer gave
+        /// </summary>
         public int TwentyDollCust
         {
             get { return twentyDollCust; }
@@ -258,6 +332,9 @@ namespace PointOfSale
                 }
             }
         }
+        /// <summary>
+        /// the amount of Ten dollar bills the customer gave
+        /// </summary>
         public int TenDollCust
         {
             get { return tenDollCust; }
@@ -271,7 +348,9 @@ namespace PointOfSale
                 }
             }
         }
-
+        /// <summary>
+        /// the amount of five dollar bills the customer gave
+        /// </summary>
         public int FiveDollCust
         {
             get { return fiveDollCust; }
@@ -285,6 +364,9 @@ namespace PointOfSale
                 }
             }
         }
+        /// <summary>
+        /// the amount of two dollar bills the customer gave
+        /// </summary>
         public int TwoDollCust
         {
             get { return twoDollCust; }
@@ -298,6 +380,9 @@ namespace PointOfSale
                 }
             }
         }
+        /// <summary>
+        /// the amount of one dollar bills the customer gave
+        /// </summary>
         public int OneDollCust
         {
             get { return oneDollCust; }
@@ -311,6 +396,9 @@ namespace PointOfSale
                 }
             }
         }
+        /// <summary>
+        /// the amount of pennies the customer gave
+        /// </summary>
 
         public int PenniesCust
         {
@@ -325,6 +413,9 @@ namespace PointOfSale
                 }
             }
         }
+        /// <summary>
+        /// the amount of Nickels the customer gave
+        /// </summary>
         public int NickelsCust
         {
             get { return nickelCust; }
@@ -338,6 +429,9 @@ namespace PointOfSale
                 }
             }
         }
+        /// <summary>
+        /// the amount of dimes the customer gave
+        /// </summary>
         public int DimesCust
         {
             get { return dimesCust; }
@@ -351,6 +445,9 @@ namespace PointOfSale
                 }
             }
         }
+        /// <summary>
+        /// the amount of Quarters the customer gave
+        /// </summary>
         public int QuartersCust
         {
             get { return quartersCust; }
@@ -364,6 +461,9 @@ namespace PointOfSale
                 }
             }
         }
+        /// <summary>
+        /// the amount of half dollars the customer gave
+        /// </summary>
         public int HalfDollCust
         {
             get { return halfDollsCust; }
@@ -377,6 +477,9 @@ namespace PointOfSale
                 }
             }
         }
+        /// <summary>
+        /// the amount of dollar coins the customer gave
+        /// </summary>
         public int FullDollCoinCust
         {
             get { return fullDollCoinCust; }
