@@ -1,0 +1,59 @@
+﻿@page
+@model IndexModel
+@using BleakwindBuffet.Data
+@{
+    ViewData["Title"] = "Home page";
+
+}
+
+
+
+
+<h1>Bleakwind Buffet</h1>
+<p>We at Bleakwind Buffet are proud to bring you authentic fantasy meals straight from the world of Skyrim. Shake the blood off your sword and sake your thirst with one of our old-fashioned sailor sodas. Hack into a Smokehouse Skeleton with your dagger. Or vanquish the the mighty Thalmor Triple Burger! You’ve had a hard adventure and earned your loot, so spend it with us!.</p>
+@{
+
+    IEnumerable<IOrderItem> entree = Menu.Entrees();
+    IEnumerable<IOrderItem> side = Menu.Sides();
+    IEnumerable<IOrderItem> drink = Menu.Drinks();
+}
+<h2>Entrees</h2>
+
+@foreach (IOrderItem item in entree)
+{
+    <div>
+        <h3>@item.ToString()</h3>
+        <div> - Price: $@item.Price</div>
+        <div> - Calories: @item.Calories</div>
+    </div>
+}
+<h2>Sides</h2>
+@foreach (IOrderItem item in side)
+{
+    <div>
+        <h3>@item.ToString()</h3>
+        <div> - Price: $@item.Price</div>
+        <div> - Calories: @item.Calories</div>
+    </div>
+}
+<h2>Drinks</h2>
+@foreach (IOrderItem item in drink)
+{
+    <div>
+        <h3>@item.ToString()</h3>
+        <div> - Price: $@item.Price</div>
+        <div> - Calories: @item.Calories</div>
+    </div>
+}
+
+<h2>Combo</h2>
+<div>Any Entree, Side, and Drink can be combined into a "Combo" with a $1 discount</div>
+<h2>Soda Flavors</h2>
+<div>
+    Blackberry,
+    Cherry,
+    Grapefruit,
+    Lemon,
+    Peach,
+    Watermelon
+</div>
