@@ -117,6 +117,12 @@ namespace BleakwindBuffet.Data.Entrees
                 cheese = value;
             }
         }
+
+        public string Description
+        {
+            get { return "Single patty burger on a brioche bun. Comes with ketchup, mustard, pickle, and cheese."; }
+        }
+
         /// <summary>
         /// The price of the burger
         /// </summary>

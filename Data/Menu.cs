@@ -354,22 +354,32 @@ namespace BleakwindBuffet.Data
 
         public static IEnumerable<IOrderItem> Search(string terms)
         {
-            List<IOrderItem> results = new List<IOrderItem>();
-
+            IEnumerable<IOrderItem> results = FullMenu();
+            
             //null check
             if (terms == null)
             {
-                return FullMenu();
+                return results;
             }
-            foreach (IOrderItem item in FullMenu())
+            /*foreach (IOrderItem item in FullMenu())
             {
                 // Add the movie if the title is a match
                 if (item.ToString().Length != 0 && (item.ToString()).Contains(terms))
                 {
                     results.Add(item);
                 }
-            }
+            }*/
+            string[] t = terms.Split(' ');
+            //for(int i = 0; i < t.Length; i++)
+            //{
+            
+                results = results.Where(item => item.ToString() != null && t.Any( val =>  item.ToString().Contains(val) || item.Description.Contains(val)));
+           
+                
+            //}
+            
             return results;
+            
         }
 
         /// <summary>
@@ -389,7 +399,7 @@ namespace BleakwindBuffet.Data
         {
             // TODO: Filter the list
             // If no filter is specified, just return the provided collection
-            if (foodT == null || foodT.Count() == 0) return items;
+            /*if (foodT == null || foodT.Count() == 0) return items;
             List<IOrderItem> results = new List<IOrderItem>();
             IEnumerable<IOrderItem> ent = Menu.Entrees();
             IEnumerable<IOrderItem> sid = Menu.Sides();
@@ -430,11 +440,17 @@ namespace BleakwindBuffet.Data
 
                     }
                 }
+            } */
+            IEnumerable<IOrderItem> results = items;
+            if (foodT != null && foodT.Count() != 0)
+            {
+                results = results.Where(item => (item is Drink && foodT.Contains("Drinks")) || (item is Entree && foodT.Contains("Entrees")) || (item is Side && foodT.Contains("Sides")));
             }
-            return results;
+                return results;
         }
         public static IEnumerable<IOrderItem> FilterByPrice(IEnumerable<IOrderItem> items, double? min, double? max)
         {
+            /*
             // TODO: Filter movies
             if (min == null && max == null) return items;
             var results = new List<IOrderItem>();
@@ -464,13 +480,27 @@ namespace BleakwindBuffet.Data
                 {
                     results.Add(item);
                 }
+            } */
+            IEnumerable<IOrderItem> results = items;
+            if(min != null && max != null)
+            {
+                results = results.Where(item => item.Price < max && item.Price > min);
             }
+            else if(min != null)
+            {
+                results = results.Where(item => item.Price > min);
+            }    
+            else if(max != null)
+            {
+                results = results.Where(item => item.Price < max);
+            }
+
             return results;
         }
 
         public static IEnumerable<IOrderItem> FilterByCalories(IEnumerable<IOrderItem> items, double? min, double? max)
         {
-            // TODO: Filter movies
+            /*// TODO: Filter movies
             if (min == null && max == null) return items;
             var results = new List<IOrderItem>();
 
@@ -499,7 +529,21 @@ namespace BleakwindBuffet.Data
                 {
                     results.Add(item);
                 }
+            }*/
+            IEnumerable<IOrderItem> results = items;
+            if (min != null && max != null)
+            {
+                results = results.Where(item => item.Calories < max && item.Calories > min);
             }
+            else if (min != null)
+            {
+                results = results.Where(item => item.Calories > min);
+            }
+            else if (max != null)
+            {
+                results = results.Where(item => item.Calories < max);
+            }
+
             return results;
         }
     }

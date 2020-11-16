@@ -75,6 +75,12 @@ namespace BleakwindBuffet.Data.Entrees
                 roll = value;
             }
         }
+        public string Description
+        {
+            get { return "Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll."; }
+
+        }
+
         /// <summary>
         /// The price of the philly
         /// </summary>

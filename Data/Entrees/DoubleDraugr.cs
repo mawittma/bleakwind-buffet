@@ -180,6 +180,13 @@ namespace BleakwindBuffet.Data.Entrees
                 mayo = value;
             }
         }
+        public string Description
+        {
+            get
+            {
+                return "Double patty burger on a brioche bun. Comes with ketchup, mustard, pickle, cheese, tomato, lettuce, and mayo.";
+            }
+        }
         /// <summary>
         /// The price of the draugr
         /// </summary>

@@ -14,6 +14,10 @@ namespace BleakwindBuffet.Data.Sides
         //private variables for Vokun salad
         private Size size = Size.Small;
         public event PropertyChangedEventHandler PropertyChanged;
+        public string Description
+        {
+            get { return "A seasonal fruit salad of mellons, berries, mango, grape, apple, and oranges."; }
+        }
         /// <summary>
         /// The size of the salad
         /// </summary>

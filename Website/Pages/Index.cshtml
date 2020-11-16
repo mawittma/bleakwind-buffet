@@ -32,9 +32,9 @@
         <h4>Calories Range</h4>
         <div>
             Between
-            <input name="CaloriesMin" type="number" min="0" max="1000" step="20" placeholder="min" value="@Model.CaloriesMin"/>
+            <input name="CaloriesMin" type="number" min="0" max="1000" step="1" placeholder="min" value="@Model.CaloriesMin"/>
             and
-            <input name="CaloriesMax" type="number" min="0" max="1000" step="20" placeholder="max" value="@Model.CaloriesMax"/>
+            <input name="CaloriesMax" type="number" min="0" max="1000" step="1" placeholder="max" value="@Model.CaloriesMax"/>
         </div>
     </div>
     <div>
@@ -48,15 +48,59 @@
         }
         <h2>Items in Menu</h2>
 
-        @foreach (IOrderItem item in @Model.Items)
-        {
+        
+        <div class="flex-columns">
+            
+            
             <div>
-                <h3>@item.ToString()</h3>
-                <div> - Price: $@item.Price</div>
-                <div> - Calories: @item.Calories</div>
+                <h3>Entrees</h3>
+                @foreach (IOrderItem item in Model.Items)
+                {
+                    
+
+                    @if (item is BleakwindBuffet.Data.Entrees.Entree)
+                    {
+                        <h4>@item.ToString()</h4>
+                        <div> - @item.Description</div>
+                        <div> - Price: $@item.Price</div>
+                        <div> - Calories: @item.Calories</div>
+                    }
+                }
             </div>
-        }
-    
+            <div>
+                <h3>Sides</h3>
+                @foreach (IOrderItem item in Model.Items)
+                {
+                    
+
+                    @if (item is BleakwindBuffet.Data.Sides.Side)
+                    {
+                        <h4>@item.ToString()</h4>
+                        <div> - @item.Description</div>
+                        <div> - Price: $@item.Price</div>
+                        <div> - Calories: @item.Calories</div>
+                    }
+                }
+            </div>
+            <div>
+                <h3>Drinks</h3>
+                @foreach (IOrderItem item in Model.Items)
+                {
+                    
+
+                    @if (item is BleakwindBuffet.Data.Drinks.Drink)
+                    {
+                        <h4>@item.ToString()</h4>
+                        <div> - @item.Description</div>
+                        <div> - Price: $@item.Price</div>
+                        <div> - Calories: @item.Calories</div>
+                    }
+                }
+            </div>
+            
+        </div>
+        
+
         <h2>Combo</h2>
         <div>Any Entree, Side, and Drink can be combined into a "Combo" with a $1 discount</div>
         <h2>Soda Flavors</h2>

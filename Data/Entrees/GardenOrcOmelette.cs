@@ -99,6 +99,11 @@ namespace BleakwindBuffet.Data.Entrees
                 cheddar = value;
             }
         }
+        public string Description
+        {
+            get { return "Vegetarian. Two egg omelette packed with a mix of broccoli, mushrooms, and tomatoes. Topped with cheddar cheese."; }
+        }
+
         /// <summary>
         /// The price of the omelette
         /// </summary>

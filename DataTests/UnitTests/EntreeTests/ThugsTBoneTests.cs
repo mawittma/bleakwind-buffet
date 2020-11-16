@@ -13,6 +13,12 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
     public class ThugsTBoneTests
     {
         [Fact]
+        public void ShouldReturnCorrectDescription()
+        {
+            ThugsTBone ttb = new ThugsTBone();
+            Assert.Equal("Juicy T-Bone, not much else to say.", ttb.Description);
+        }
+        [Fact]
         public void IsAssignableFromINotifyPropertyChanged()
         {
             ThugsTBone ttb = new ThugsTBone();

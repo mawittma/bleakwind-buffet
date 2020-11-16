@@ -14,6 +14,10 @@ namespace BleakwindBuffet.Data.Sides
         //private variables for waffle fries
         private Size size = Size.Small;
         public event PropertyChangedEventHandler PropertyChanged;
+        public string Description
+        {
+            get { return "Crispy fried potato waffle fries."; }
+        }
         /// <summary>
         /// The size of the waffle fries
         /// </summary>

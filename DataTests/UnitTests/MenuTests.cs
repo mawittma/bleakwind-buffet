@@ -9,12 +9,6 @@ namespace BleakwindBuffet.DataTests.UnitTests
     public class MenuTests
     {
         
-        [Fact]
-        public void SearchReturnsFullMenuIfNull()
-        {
-            string t = null;
-            IEnumerable<IOrderItem> res = Menu.Search(t);
-            Assert.Equal<IEnumerable<IOrderItem>>(res, Menu.FullMenu());
-        }
+        
     }
 }

@@ -72,6 +72,10 @@ namespace BleakwindBuffet.Data
                 }    
             }
         }
+        public string Description
+        {
+            get { return "One Entree, One Side, One Drink, One Dollar off"; }
+        }
         /// <summary>
         /// The price of the combo
         /// </summary>

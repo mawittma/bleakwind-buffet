@@ -106,6 +106,10 @@ namespace BleakwindBuffet.Data.Drinks
                 roomForCream = value;
             }
         }
+        public string Description
+        {
+            get { return "Fair trade, fresh ground dark roast coffee."; }
+        }
         /// <summary>
         /// The price of the coffee based on size
         /// </summary>

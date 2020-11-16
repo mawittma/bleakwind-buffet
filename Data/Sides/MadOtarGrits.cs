@@ -14,6 +14,10 @@ namespace BleakwindBuffet.Data.Sides
         // private variables for mad otar grits
         private Size size = Size.Small;
         public event PropertyChangedEventHandler PropertyChanged;
+        public string Description
+        {
+            get { return "Cheesey Grits."; }
+        }
         /// <summary>
         /// The size of the grits
         /// </summary>

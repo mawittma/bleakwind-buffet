@@ -64,6 +64,10 @@ namespace BleakwindBuffet.Data.Drinks
                 size = value; 
             }
         }
+        public string Description
+        {
+            get { return "Fresh squeezed apple juice."; }
+        }
         /// <summary>
         /// The price of the apple juice based on its size
         /// </summary>

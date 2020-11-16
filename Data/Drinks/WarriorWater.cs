@@ -78,6 +78,10 @@ namespace BleakwindBuffet.Data.Drinks
                 lemon = value;
             }
         }
+        public string Description
+        {
+            get { return "It’s water. Just water."; }
+        }
         /// <summary>
         /// The price of the water based on size
         /// </summary>

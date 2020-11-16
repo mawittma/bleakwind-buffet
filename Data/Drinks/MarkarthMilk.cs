@@ -63,6 +63,10 @@ namespace BleakwindBuffet.Data.Drinks
                 size = value;
             }
         }
+        public string Description
+        {
+            get { return "Hormone-free organic 2% milk."; }
+        }
         /// <summary>
         /// The price of the milk based on size
         /// </summary>

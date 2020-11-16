@@ -14,6 +14,10 @@ namespace BleakwindBuffet.Data.Sides
         // private variables for miraak
         private Size size = Size.Small;
         public event PropertyChangedEventHandler PropertyChanged;
+        public string Description
+        {
+            get { return "Perfectly prepared hash brown pancakes."; }
+        }
         /// <summary>
         /// The size of the miraak
         /// </summary>
